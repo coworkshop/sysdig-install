@@ -20,6 +20,9 @@ variable "dns_prefix" {
   default = "k8stest"
 }
 
+variable sysdig_secure_api_token {
+  default = ""
+}
 # Refer to https://azure.microsoft.com/global-infrastructure/services/?products=monitor for available Log Analytics regions.
 variable "log_analytics_workspace_location" {
   default = "norwayeast"
