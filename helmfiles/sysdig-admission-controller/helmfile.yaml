@@ -1,12 +1,12 @@
 filepath: ''
-namespace: sysdig-agent
+namespace: sysdig-admission-controller
 repositories:
   - name: sysdig
     url: https://charts.sysdig.com
 releases:
-  - chart: sysdig/agent
-    version: 1.5.21
-    name: agent
+  - chart: sysdig/admission-controller
+    version: 0.6.20
+    name: admission-controller
     values:
       - values.yaml
 templates: {}
