@@ -1,9 +1,9 @@
 enabled: true
 global:
   clusterConfig:
-    name: $CLUSTER_NAME
+    name: audit-log-test
   sysdig:
-    accessKey: $SYSDIG_API_TOKEN
+    accessKey: ''
 agent:
   sysdig:
     settings:

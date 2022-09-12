@@ -4,7 +4,7 @@ repositories:
   - name: sysdig
     url: https://charts.sysdig.com
 releases:
-  - chart: ../../charts/agent
+  - chart: charts/agent
     version: v1.5.21
     name: agent
     values:
