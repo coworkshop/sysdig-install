@@ -1,0 +1,13 @@
+filepath: ''
+namespace: sysdig-admission-controller
+repositories:
+  - name: sysdig
+    url: https://charts.sysdig.com
+releases:
+  - chart: sysdig/admission-controller
+    version: 0.6.20
+    name: admission-controller
+    values:
+      - values.yaml
+templates: {}
+renderedvalues: {}
