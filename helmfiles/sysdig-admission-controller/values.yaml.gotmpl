@@ -1,6 +1,6 @@
 enabled: true
 sysdig:
-  secureAPIToken: ''
+  secureAPIToken: {{ .Values.sysdig.secureAPIToken }}
   url: https://{{ .Values.sysdig.url }}
 clusterName: {{ .Values.clusterName }}
 features:

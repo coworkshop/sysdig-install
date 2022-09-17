@@ -2,7 +2,7 @@ global:
   clusterConfig:
     name: {{ .Values.clusterName }}
   sysdig:
-    accessKey: ''
+    accessKey: {{ .Values.sysdig.accessKey }}
 agent:
   sysdig:
     settings:

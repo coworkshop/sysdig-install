@@ -3,7 +3,7 @@ environments:
  prod:
    values:
     - env/prod.yaml
- stage:
+ default:
    values:
     - env/stage.yaml
 

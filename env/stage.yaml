@@ -1,4 +1,5 @@
 clusterName: audit-log-test
 sysdig:
   url: eu1.app.sysdig.com
-  
+  secureAPIToken: test
+  accessKey: akey
