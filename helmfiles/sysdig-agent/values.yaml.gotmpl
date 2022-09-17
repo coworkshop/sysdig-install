@@ -1,17 +1,16 @@
-enabled: true
 global:
   clusterConfig:
-    name: audit-log-test
+    name: {{ .Values.clusterName }}
   sysdig:
     accessKey: ''
 agent:
   sysdig:
     settings:
-      collector: ingest-eu1.app.sysdig.com
+      collector: ingest-{{ .Values.sysdig.url }}
       collector_port: 6443
 nodeAnalyser:
   nodeAnalyser:
-    apiEndpoint: eu1.app.sysdig.com
+    apiEndpoint: {{ .Values.sysdig.url }}
     secure:
       vulnerabilityManagement:
         newEngineOnly: true

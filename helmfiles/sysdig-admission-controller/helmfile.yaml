@@ -1,4 +1,5 @@
 filepath: ''
+
 namespace: sysdig-admission-controller
 repositories:
   - name: sysdig
@@ -8,6 +9,6 @@ releases:
     version: 0.6.20
     name: admission-controller
     values:
-      - values.yaml
+      - values.yaml.gotmpl
 templates: {}
 renderedvalues: {}

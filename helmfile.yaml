@@ -1,6 +1,22 @@
 filepath: ''
+environments:
+ prod:
+   values:
+    - env/prod.yaml
+ stage:
+   values:
+    - env/stage.yaml
+
 helmfiles:
-  - path: helmfiles/sysdig-agent
-  - path: helmfiles/sysdig-admission-controller
+- path: helmfiles/sysdig-agent
+  values:
+  - {{ toYaml .Values | nindent 4 }}
+  # pass the current state values to the sub-helmfile
+  # add other values to use overlay logic here
+- path: helmfiles/sysdig-admission-controller
+  values:
+  - {{ toYaml .Values | nindent 4 }}
+  # pass the current state values to the sub-helmfile
+  # add other values to use overlay logic here
 templates: {}
 renderedvalues: {}

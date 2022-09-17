@@ -8,6 +8,6 @@ releases:
     version: 1.5.21
     name: agent
     values:
-      - values.yaml
+      - values.yaml.gotmpl
 templates: {}
 renderedvalues: {}

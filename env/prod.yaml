@@ -1,0 +1,4 @@
+clusterName: something-ord
+sysdig:
+  url: PROD-eu1.app.sysdig.com
+  
