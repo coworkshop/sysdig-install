@@ -1,0 +1,7 @@
+enabled: true
+sysdig:
+  secureAPIToken: {{ requiredEnv "SYSDIG_SECURE_API_TOKEN" }}
+  url: https://{{ .Values.sysdig.url }}
+clusterName: {{ .Values.clusterName }}
+features:
+  k8sAuditDetections: true

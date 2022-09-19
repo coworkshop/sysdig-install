@@ -1,7 +1,0 @@
-enabled: true
-sysdig:
-  secureAPIToken: ''
-  url: https://eu1.app.sysdig.com
-clusterName: audit-log-test
-features:
-  k8sAuditDetections: true

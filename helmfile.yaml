@@ -1,6 +1,7 @@
 filepath: ''
+
 helmfiles:
-  - path: helmfiles/sysdig-agent
-  - path: helmfiles/sysdig-admission-controller
+- path: helmfiles/sysdig-agent
+- path: helmfiles/sysdig-admission-controller
 templates: {}
 renderedvalues: {}
