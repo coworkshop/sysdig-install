@@ -1,4 +1,13 @@
 filepath: ''
+environments:
+ prod:
+   values:
+    - ../../env/prod.yaml
+ default:
+   values:
+    - ../../env/stage.yaml
+
+
 namespace: sysdig-agent
 repositories:
   - name: sysdig
