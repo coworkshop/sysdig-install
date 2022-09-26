@@ -14,3 +14,15 @@ nodeAnalyser:
     secure:
       vulnerabilityManagement:
         newEngineOnly: true
+tolerations:
+- key: "use"
+  operator: "Equal"
+  value: "NO"
+  effect: "NoSchedule"
+resources:
+  requests:
+    cpu: 600m
+    memory: 512Mi
+  limits:
+    cpu: 600m
+    memory: 512Mi

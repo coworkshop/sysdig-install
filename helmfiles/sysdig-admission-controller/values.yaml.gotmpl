@@ -5,3 +5,11 @@ sysdig:
 clusterName: {{ .Values.clusterName }}
 features:
   k8sAuditDetections: true
+tolerations:
+- key: "use"
+  operator: "Equal"
+  value: "NO"
+  effect: "NoSchedule"
+  
+
+
