@@ -37,12 +37,12 @@ helm install sysdig-agent --namespace sysdig-agent \
 
 
     helm install sysdig-admission-controller sysdig/admission-controller \
---create-namespace -n sysdig-admission-controller \
---set sysdig.secureAPIToken=$SYSDIG_SECURE_API_TOKEN \
---set clusterName=$CLUSTER_NAME \
---set sysdig.url=https://$SYSDIG_SECURE_ENDPOINT \
---set features.k8sAuditDetections=true 
---set tolerations[0].key=use \
---set tolerations[0].operator=Equal \
---set tolerations[0].value=NO \
---set tolerations[0].effect=NoSchedule \
+        --create-namespace -n sysdig-admission-controller \
+        --set sysdig.secureAPIToken=$SYSDIG_SECURE_API_TOKEN \
+        --set clusterName=$CLUSTER_NAME \
+        --set sysdig.url=https://$SYSDIG_SECURE_ENDPOINT \
+        --set features.k8sAuditDetections=true \
+        --set tolerations[0].key=use \
+        --set tolerations[0].operator=Equal \
+        --set tolerations[0].value=NO \
+        --set tolerations[0].effect=NoSchedule 
