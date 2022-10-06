@@ -15,9 +15,7 @@ nodeAnalyser:
       vulnerabilityManagement:
         newEngineOnly: true
 tolerations:
-- key: "use"
-  operator: "Equal"
-  value: "NO"
+- operator: "Exists"
   effect: "NoSchedule"
 resources:
   requests:

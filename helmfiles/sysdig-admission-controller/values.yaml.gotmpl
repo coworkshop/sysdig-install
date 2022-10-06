@@ -6,9 +6,7 @@ clusterName: {{ .Values.clusterName }}
 features:
   k8sAuditDetections: true
 tolerations:
-- key: "use"
-  operator: "Equal"
-  value: "NO"
+- operator: "Exists"
   effect: "NoSchedule"
   
 
