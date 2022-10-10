@@ -5,9 +5,6 @@ sysdig:
 clusterName: {{ .Values.clusterName }}
 features:
   k8sAuditDetections: true
-tolerations:
-- operator: "Exists"
-  effect: "NoSchedule"
   
 
 

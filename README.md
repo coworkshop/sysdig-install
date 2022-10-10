@@ -34,26 +34,36 @@ helmfile apply
 ## helm install
 
 helm install sysdig-agent --namespace sysdig-agent \
+  --create-namespace \
+  --set global.sysdig.accessKey=$SYSDIG_API_TOKEN \
+  --set global.sysdig.region=eu1 \
+  --set collectorSettings.collectorHost=ingest-eu1.app.sysdig.com \
+  --set collectorSettings.collectorPort=6443 \    
+  --set global.clusterConfig.name=palm \
+  --set resources.limits.cpu=600m \
+  --set resources.limits.memory=512Mi \
+  --set resources.requests.cpu=600m \
+  --set resources.requests.memory=512Mi \
+  --set tolerations[0].operator=Exists \
+  sysdig/agent
+
+
+
+
+
+helm install node-analyzer --namespace sysdig-agent \
  --set global.sysdig.accessKey=$SYSDIG_API_TOKEN \
-    --set agent.sysdig.settings.collector=ingest-eu1.app.sysdig.com \
-    --set agent.sysdig.settings.collector_port=6443 \
-    --set global.clusterConfig.name=$CLUSTER_NAME \
  --set nodeAnalyzer.nodeAnalyzer.apiEndpoint=eu1.app.sysdig.com \
  --set nodeAnalyzer.secure.vulnerabilityManagement.newEngineOnly=true \
- --set resources.limits.cpu=600m \
- --set resources.limits.memory=512Mi \
- --set resources.requests.cpu=600m \
- --set resources.requests.memory=512Mi \
- --set tolerations[0].key=use \
- --set tolerations[0].operator=Equal \
- --set tolerations[0].value=NO \
- --set tolerations[0].effect=NoSchedule \
- sysdig/sysdig-deploy
+     --set agent.sysdig.settings.collector=ingest-eu1.app.sysdig.com \
+    --set agent.sysdig.settings.collector_port=6443 \
+   sysdig/node-analyzer
+
 
     helm install sysdig-admission-controller sysdig/admission-controller \
         --create-namespace -n sysdig-admission-controller \
         --set sysdig.secureAPIToken=$SYSDIG_SECURE_API_TOKEN \
-        --set clusterName=$CLUSTER_NAME \
+        --set global.clusterConfig.name=$CLUSTER_NAME \
         --set sysdig.url=https://$SYSDIG_SECURE_ENDPOINT \
         --set features.k8sAuditDetections=true \
         --set tolerations[0].key=use \
